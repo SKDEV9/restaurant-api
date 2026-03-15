@@ -4,9 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Prato {
@@ -14,13 +11,8 @@ public class Prato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O nome do prato não pode estar vazio!")
     private String nome;
-
-    private String descricao; // A descrição pode ficar sem regra, às vezes o prato é autoexplicativo
-
-    @NotNull(message = "O preço é obrigatório!")
-    @Positive(message = "O preço deve ser maior que zero!")
+    private String descricao;
     private Double preco;
 
 
